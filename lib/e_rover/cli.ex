@@ -6,7 +6,9 @@ defmodule ERover.CLI do
   """
 
   def run(argv) do
-    parse_args(argv)
+    argv
+      |> parse_args
+      |> process
   end 
 
    
@@ -32,6 +34,16 @@ defmodule ERover.CLI do
   
     end 
   end
-end  
 
+  def process (:help) do
+    IO.puts """
+    usage: e_rover <path_to_instructions> [verbose | true]
+    """
+    System.halt(0)
+  end
+  def process({file_path, verbose}) do
+    ERover.Operate.start(file_path)
+  end
+
+end
 
