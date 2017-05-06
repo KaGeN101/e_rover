@@ -6,9 +6,11 @@ defmodule ERover.Operate do
       |> Stream.map(&String.trim_trailing/1) 
       |> Enum.to_list
       |> ERover.Instructions.parse
+      |> drive
   end
 
-  def drive() do
+  def drive(instructions) do
     IO.puts "I will DRIVE!"
+    IO.inspect instructions
   end  
 end  
