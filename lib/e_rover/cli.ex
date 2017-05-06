@@ -20,15 +20,15 @@ defmodule ERover.CLI do
   def parse_args(argv) do
     parse = OptionParser.parse(argv, switches: [ help: :boolean],
                                      aliases:  [ h:    :help   ])
-   case parse do
-     { [ help: true ], _, _ }
-       -> :help
+    case parse do
+      { [ help: true ], _, _ }
+        -> :help
   
       { _, [file], _ }
         -> {file, true}
    
       { _, [file, verbose], _ }
-        -> { file, verbose }
+        -> {file, verbose}
 
       _ -> :help
   

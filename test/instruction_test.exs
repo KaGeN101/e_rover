@@ -1,9 +1,9 @@
 defmodule InstructionTest do 
   use ExUnit.Case
-  import ERover.Instruction, only: [ parse: 1 ]
+  import ERover.Instructions, only: [ parse: 1 ]
 
   test "test the data" do
-    parse "blbla" 
+    parse ["8 8", "1 2 E", "MMLMM"] 
   end
 end
 

@@ -8,7 +8,7 @@ defmodule CliTest do
   end
 
   test "two values returned if two given" do
-    assert parse_args(["/file_path", false]) == { "/file_path", false }
+    assert parse_args(["/file_path", false]) == {"/file_path", false }
   end
 
   test "verbose is defaulted if only file_path given" do
