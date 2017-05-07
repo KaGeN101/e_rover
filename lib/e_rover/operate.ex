@@ -14,7 +14,7 @@ defmodule ERover.Operate do
 
   def drive(instructions) do
     IO.puts "I will DRIVE!"
-    _execute(Map.get(instructions, :commands), instructions)   
+    _execute(String.to_charlist(Map.get(instructions, :commands)), instructions)   
   end
 
   defp _execute([command | tail], instructions) do
@@ -23,4 +23,4 @@ defmodule ERover.Operate do
   end  
   defp _execute([], instructions), do: instructions
     
-end  
+end 
