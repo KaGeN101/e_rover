@@ -2,8 +2,9 @@ defmodule InstructionTest do
   use ExUnit.Case
   import ERover.Instructions, only: [ parse: 1 ]
 
-  test "test the data" do
-    assert parse ["8 8", "1 2 E", "MMLMM"] == %{grid: %{rows: 8, cols: 8}} 
+  test "test well formed the data" do
+    assert parse(["4 4", "1 1 N", "MMLMM"]) == %{commands: "MMLMM", grid: %{cols: 4, rows: 4}, intial: %{col: 1, direction: "N", row: 1}}
+      
   end
 end
 

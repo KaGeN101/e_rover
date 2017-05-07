@@ -7,11 +7,11 @@ defmodule ERover.Instructions do
   end
   defp _parse_grid grid do
     [x, y] = String.split(grid, " ")
-    %{rows: x, cols: y}
+    %{rows: String.to_integer(x), cols: String.to_integer(y)}
   end    
   def _parse_init(initial) do
     [x, y, d] = String.split(initial, " ")
-    %{col: x, row: y, direction: d}
+    %{col: String.to_integer(x), row: String.to_integer(y), direction: d}
   end
   
     
